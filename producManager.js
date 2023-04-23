@@ -9,14 +9,14 @@ class ProductManager {
     }
 
     addProduct = (
-        title, description, price, thumbnail, code, stock
+        title, description, price, thumbnail, code = 1, stock
     ) => {
         const products = {
             title,
             description,
             price,
             thumbnail,
-            code: [],
+            code,
             stock
         };
 
@@ -44,10 +44,10 @@ class ProductManager {
 
 
 const manejadorProductos = new ProductManager();
-manejadorProductos.addProduct('Remera Rolling Stone', 'Remera de verano', 1500, 'sin imagen', 20);
-manejadorProductos.addProduct('jeans alaska', 'mom', 4500, 'sin imagen', 12);
-manejadorProductos.addProduct('buso edicion limita', 'buso rustico', 3500, 'sin imagen', 15);
+manejadorProductos.addProduct('Remera Rolling Stone', 'Remera de verano', 1500, 'sin imagen', 20, 20 );
+manejadorProductos.addProduct('jeans alaska', 'mom', 4500, 'sin imagen', 12, 20);
+manejadorProductos.addProduct('buso edicion limita', 'buso rustico', 3500, 'sin imagen', 15, 20);
 
 
-manejadorProductos.getProductById(1, 3, 4);
+manejadorProductos.getProductById();
 console.log(manejadorProductos.getProducts());
